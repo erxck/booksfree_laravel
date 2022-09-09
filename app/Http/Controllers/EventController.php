@@ -15,9 +15,18 @@ class EventController extends Controller
      */
     public function index()
     {
-        $books = Books::all();
+        $search = request('search');
 
-        return view('welcome', ['books' => $books]);
+        if($search) {
+            $books = Books::where([
+                ['title', 'like', '%' . $search . '%']
+            ])->get();
+        } else {
+            $books = Books::all();
+        }
+
+
+        return view('welcome', ['books' => $books, 'search' => $search]);
     }
 
     /**
@@ -28,21 +37,31 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required|max:255',
+            'file' => 'required|mimes:pdf|max: 50000',
+        ]);
+
         $books = new Books;
 
         $books->title = $request->title;
 
-        if($request->hasFile('file') && $request->file('file')->isValid()) {
-            $requestFile = $request->file;
-            $extension = $requestFile->extension();
-            $fileName = md5($requestFile->getClientOriginalName() . strtotime("now")) . "." . $extension;
-            $requestFile->move(public_path('file/books'), $fileName);
-            $books->file = $fileName;
+        try {
+            if($request->hasFile('file') && $request->file('file')->isValid()) {
+                $requestFile = $request->file;
+                $extension = $requestFile->extension();
+                $fileName = md5($requestFile->getClientOriginalName() . strtotime("now")) . "." . $extension;
+                $requestFile->move(public_path('file/books'), $fileName);
+                $books->file = $fileName;
+            }
+
+            $books->save();
+
+            return redirect('/')->with('success', 'Livro enviado com sucesso!');
+        } catch (\Throwable $error) {
+            return redirect('/')->with("error", "Ocorreu um erro inesperado: { $error }");
         }
 
-        $books->save();
-
-        return redirect('/')->with('success', 'Livro enviado com succeso!');
     }
 
     /**

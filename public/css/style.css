@@ -1,3 +1,7 @@
+/* GLOBAL */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -10,8 +14,9 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #17202A;
+    letter-spacing: 1px;
     height: 100vh;
     width: 100%;
 }
@@ -29,99 +34,6 @@ main {
     margin: 60px 0 40px;
 }
 
-.container {
-    margin: 0 10px;
-}
-
-.header-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.header-title h1 {
-    font-size: 4rem;
-    color: #fff;
-}
-
-.aviso span {
-    display: block;
-    font-size: 1.4rem;
-    color: #5555ff;
-    margin: 5px 0;
-}
-
-.form {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 700px;
-    padding: 40px 40px;
-    margin: 0 auto;
-    background-color: #212F3D;
-}
-
-.input-title label {
-    font-size: 1.6rem;
-    font-weight: bolder;
-    color: #fff;
-}
-
-.input-title input {
-    font-size: 1.6rem;
-    border: 1px solid #cacaca;
-    border-style: none;
-    border-radius: 5px;
-    width: 100%;
-    max-width: 300px;
-    padding: 9px;
-    outline: 0;
-}
-
-.input {
-    margin: 20px 0 40px;
-}
-
-.input label {
-    font-size: 1.6rem;
-    font-weight: bolder;
-    color: #fff;
-}
-
-.input input[type="file"] {
-    margin-left: 10px;
-    color: #04AA6D;
-}
-
-.input-enviar {
-    background-color: #04AA6D;
-    box-shadow: -0.7px -0.7px 3px white, 0px 0px 3px black;;
-    border-radius: 7px;
-    width: 100%;
-    max-width: 200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.input-enviar input[type="submit"] {
-    font-size: 1.8rem;
-    background: transparent;
-    color: #fff;
-    border-style: none;
-    padding: 8px;
-    width: 100%;
-    outline: 0;
-    cursor: pointer;
-}
-
-.input-enviar:hover {
-    box-shadow: -0px -0px 3px black, 0px 0px 3px white;;
-}
-
 .error {
     font-size: 1.3rem;
     color: #FF0000;
@@ -132,11 +44,121 @@ main {
     color: #006aff;
 }
 
-.title-aviso {
-    margin-bottom: 50px;
+
+
+/* CONTAINER */
+
+.container {
+    margin: 0 10px;
 }
 
-.title-aviso .title h2 {
+
+
+/* HEADER */
+
+header .header-content .header-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header .header-content .header-title h1 {
+    font-size: 4rem;
+    color: #fff;
+}
+
+header .header-content .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px;
+    padding: 40px 40px;
+    margin: 0 auto;
+    background-color: #212F3D;
+}
+
+header .header-content .form .input-title label {
+    font-size: 1.6rem;
+    font-weight: bolder;
+    color: #fff;
+}
+
+header .header-content .form .input-title input {
+    font-size: 1.6rem;
+    border: 1px solid #cacaca;
+    border-style: none;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    padding: 9px;
+    outline: 0;
+}
+
+header .header-content .form .input-file {
+    margin: 20px 0 40px;
+}
+
+header .header-content .form .input-file .warning span {
+    display: block;
+    font-size: 1.4rem;
+    color: #5555ff;
+    margin: 5px 0;
+}
+
+header .header-content .form .input-file label {
+    font-size: 1.6rem;
+    font-weight: bolder;
+    color: #fff;
+}
+
+header .header-content .form .input-file input[type="file"] {
+    margin-left: 10px;
+    color: #04AA6D;
+}
+
+header .header-content .form .input-send {
+    background-color: #04AA6D;
+    box-shadow: 0.7px -0.7px 3px white, 0px 0px 3px black;;
+    border-radius: 7px;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+header .header-content .form .input-send input[type="submit"] {
+    font-size: 1.8rem;
+    background: transparent;
+    color: #fff;
+    border-style: none;
+    padding: 8px;
+    width: 100%;
+    outline: 0;
+    cursor: pointer;
+}
+
+header .header-content .form .input-send:hover {
+    bottom: 1px;
+    left: 1px;
+    box-shadow: 0px 0px 3px black, 0px 0px 3px white;;
+}
+
+
+
+/* MAIN */
+
+main .title-main {
+    margin-bottom: 30px;
+}
+
+main .title-main h2 {
     font-size: 2.4rem;
     color: #fff;
     border-bottom: 3px solid #04AA6D;
@@ -144,13 +166,45 @@ main {
     padding-bottom: 8px;
 }
 
-.title-aviso .aviso-one h5 {
+main .title-main h5 {
     font-size: 1.328rem;
     color: #AAA;
     margin-top: 30px;
 }
 
-.flex-books {
+main .flex-center .flex-end {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+main .flex-center .flex-end .input-search {
+    display: flex;
+    align-items: center;
+}
+
+main .flex-center .flex-end .input-search i {
+    font-size: 2rem;
+    color: #04AA6D;
+    margin-right: 7px;
+}
+
+main .flex-center .flex-end .input-search input {
+    font-size: 1.6rem;
+    border-style: none;
+    border-radius: 5px;
+    width: 100%;
+    outline: 0;
+    padding: 8px 15px;
+}
+
+main .flex-center .see-all {
+    margin-top: 30px;
+}
+
+main .flex-center .flex-books {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -162,7 +216,17 @@ main {
     padding: 30px 15px;
 }
 
-.books a {
+main .flex-center .flex-books p {
+    font-size: 1.6rem;
+    color: #FFF;
+}
+
+main .flex-center .flex-books p a {
+    text-decoration: none;
+    color: #04AA6D;
+}
+
+main .flex-center .flex-books .books a {
     background-color: #2C3E50;
     display: flex;
     justify-content: center;
@@ -171,17 +235,34 @@ main {
     text-align: center;
     width: 180px;
     height: 180px;
-    padding: 20px;
+    padding: 10px;
 
     font-size: 2.0rem;
+    font-weight: bold;
     text-decoration: none;
     color: #fff;
 }
 
-.books a:hover {
+main .flex-center .flex-books .books a span {
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+main .flex-center .flex-books .books a:hover {
     background-color: #172029;
     opacity: 0.5;
 }
+
+main .flex-center .flex-books .books img {
+    margin-bottom: 15px;
+}
+
+
+
+/* FOOTER */
 
 footer {
     display: flex;
@@ -190,17 +271,17 @@ footer {
     padding: 40px;
 }
 
-.aviso-verificacao p {
+footer .warning-verify p {
     font-size: 1.3rem;
     color: #AAA;
 }
 
-.aviso-verificacao p a {
+footer .warning-verify p a {
     text-decoration: none;
     color: #04AA6D;
 }
 
-.aviso-verificacao p a:hover {
+footer .warning-verify p a:hover {
     color: #0000FF;
 }
 
@@ -214,7 +295,7 @@ footer {
         width: 250px;
     }
 
-    .title-aviso .title h2 {
+    .title-warning .title h2 {
         width: 210px;
     }
 
